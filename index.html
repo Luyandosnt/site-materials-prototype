@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Site Materials Prototype</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <aside class="sidebar" aria-label="Primary">
+        <div class="brand">
+          <div class="brand-mark">SM</div>
+          <div>
+            <strong>Site Materials</strong>
+            <span>Construction inventory</span>
+          </div>
+        </div>
+
+        <label class="field-label" for="roleSelect">Current role</label>
+        <select id="roleSelect" class="select">
+          <option value="admin">Administrator</option>
+          <option value="site">Site Manager</option>
+          <option value="procurement">Procurement Officer</option>
+        </select>
+
+        <nav class="nav" id="roleNav"></nav>
+
+        <button id="resetBtn" class="ghost-button" type="button">
+          <span aria-hidden="true">R</span>
+          Reset demo data
+        </button>
+      </aside>
+
+      <section class="workspace">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Prototype workspace</p>
+            <h1 id="pageTitle">Administrator Dashboard</h1>
+          </div>
+          <div class="project-pill">
+            <span class="dot"></span>
+            <span id="projectName">Lusaka Clinic Extension</span>
+          </div>
+        </header>
+
+        <section class="module-header">
+          <div class="module-title">
+            <p class="eyebrow">Active project</p>
+            <h2 id="heroTitle">Materials control from BOQ to progress</h2>
+            <p id="heroText">Track requests, purchase orders, deliveries, stock movement, expenses, and BOQ completion in one workflow.</p>
+          </div>
+          <div class="toolbar" role="search">
+            <label class="search-box" for="globalSearch">
+              <span aria-hidden="true">S</span>
+              <input id="globalSearch" type="search" placeholder="Search materials, POs, suppliers..." />
+            </label>
+            <button class="icon-button" type="button" title="Export table"><span aria-hidden="true">E</span></button>
+            <button class="primary-button" type="button"><span aria-hidden="true">+</span> New record</button>
+          </div>
+        </section>
+
+        <section id="alerts" class="alerts" aria-live="polite"></section>
+        <section id="cards" class="metric-grid"></section>
+        <section id="view" class="view-panel"></section>
+      </section>
+    </main>
+
+    <template id="emptyStateTemplate">
+      <div class="empty-state">
+        <strong>No records yet</strong>
+        <span>The prototype will show matching records here when workflow data is created.</span>
+      </div>
+    </template>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
